@@ -74,25 +74,16 @@ while True:
                 print("Kimlik numaranızı yanlış ya da hatalı girdiniz.")
             else:
                 print(f"{bilgiler[0]} {bilgiler[1]} lütfen bekleyiniz...")
+                print("")
                 print("1 - Randevulu giriş")
                 print("2 - Randevusuz giriş")
+                print("3 - Acil Giriş")
+                print("4 - Mevcut Hastane Kapasitesi")
                 secim = input("Lütfen seçiminizi yapın: ")
                 if secim == "1":
-                    print("Randevunuz", "randevu_tarihi", "tarihine saat 14:00'da ayarlanmıştır.")
-                elif secim == "2":
-                    print("1 - Acil Giriş")
-                    print("2 - Polikrlinik İşlemleri")
-                    print("3 - Aşı")
-                    print("4 - Yaralanma")
-                    print("5 - Röntgen/MR kontrol")
-                    print("6 - Mevcut Hastane Kapasitesini Öğren")
-                    secim = input("Lütfen seçim yapın: ")
+                    print("1 - Poliklinik İşlemleri")
+                    print("2 - Rontgen/MR kontrol")
                     if secim == "1":
-                        with open("acil_giris.txt", "a", encoding="utf-8") as acil_giris:
-                            siradaki = sum(1 for _ in acil_giris) + 1
-                            acil_giris.write("Sıranız: {}\n".format(kimlik_no))
-                            print("Sıranız: ", siradaki)
-                    elif secim == "2":
                         print("1 - Anestiyoloji")
                         print("2 - Beslenme ve Diyet")
                         print("3 - Beyin ve Sinir Cerrahisi")
@@ -113,31 +104,35 @@ while True:
                         print("18 - Beslenme ve Diyet")
                         print("19 - Mevcut Hastane Kapasitesini Öğren")
                         secim = input("Lütfen seçim yapın: ")
+                        if secim == "1":
+                            
+                    elif secim == "2":
+                        with open("rontgen_mr_kontrol.txt", "a", encoding="utf-8") as rontgen_mr_kontrol:
+                            siradaki = sum(1 for _ in rontgen_mr_kontrol) + 1
+                            rontgen_mr_kontrol.write("Sıranız: {}\n".format(kimlik_no))
+                            print("Sıranız: ", siradaki)
+                elif secim == "2":
+                    print("1 - Enjeksiyon")
+                    print("2 - Yaralanma")
+                    secim = input("Lütfen seçim yapın: ")
+                    if secim == "1":
+                        with open("Enjeksiyon.txt", "a", encoding="utf-8") as Enjeksiyon:
+                           siradaki = sum(1 for _ in asi) + 1
+                           Enjeksiyon.write("Sıranız: {}\n".format(kimlik_no))
+                           print("Sıranız: ", siradaki)
+                    elif secim == "2":
+                        with open("yaralanma.txt", "a", encoding="utf-8") as yaralanma:
+                           siradaki = sum(1 for _ in yaralanma) + 1
+                           yaralanma.write("Sıranız: {}\n".format(kimlik_no))
+                           print("Sıranız: ", siradaki)
                     else:
-                        print("Gecersiz seçim. Tekrar deneyiniz!")
+                        print("Geçersiz seçim. Tekrar deneyiniz!")
                 elif secim == "3":
-                    with open("asi.txt", "a", encoding="utf-8") as asi:
-                        siradaki = sum(1 for _ in asi) + 1
-                        asi.write("Sıranız: {}\n".format(kimlik_no))
+                    with open("acil_giris.txt", "a", encoding="utf-8") as acil_giris:
+                        siradaki = sum(1 for _ in open("acil_giris.txt", "r", encoding="utf-8")) + 1
+                        acil_giris.write("{}\n".format(kimlik_no))
                         print("Sıranız: ", siradaki)
-                elif secim == "4":
-                    with open("yaralanma.txt", "a", encoding="utf-8") as yaralanma:
-                        siradaki = sum(1 for _ in yaralanma) + 1
-                        yaralanma.write("Sıranız: {}\n".format(kimlik_no))
-                        print("Sıranız: ", siradaki)
-                elif secim == "5":
-                    with open("rontgen_mr_kontrol.txt", "a", encoding="utf-8") as rontgen_mr_kontrol:
-                        siradaki = sum(1 for _ in acil_giris) + 1
-                        rontgen_mr_kontrol.write("Sıranız: {}\n".format(kimlik_no))
-                        print("Sıranız: ", siradaki)
-                elif secim == "6":
-#doktor yogun bakım kısmı da var eklenecek.
-                    print("Hastanede bulunan kişi sayısı: ")
+                elif secim == "4": #hastane kapasitesi tüm txt toplam satırı
+                   print("Mevcut Hastane Kapasitesi: ")
                 else:
-                    print("Geçersiz seçim. Tekrar deneyiniz!")
-    elif secim == "3":
-        print("Çıkış yapıldı!")
-        break
-
-    else:
-        print("Geçersiz seçim! Lütfen tekrar deneyin.")
+                     print("Geçersiz seçim! Lütfen tekrar deneyin.")
