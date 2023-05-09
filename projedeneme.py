@@ -105,12 +105,12 @@ while True:
                     print("1 - Enjeksiyon")
                     secim = input("Lütfen seçim yapın: ")
                     if secim == "1":
-                        with open("enjeksiyon.txt", "a") as enjeksiyon:
-                            siradaki = sum(1 for _ in enjeksiyon) + 1
-                            enjeksiyon.write("Sıranız: {}\n".format(siradaki))
+                        with open("enjeksiyon.txt", "a", encoding="utf-8") as enjeksiyon:
+                            siradaki = sum(1 for _ in open("enjeksiyon.txt", "r", encoding="utf-8")) + 1
+                            enjeksiyon.write("{}\n".format(kimlik_no))
                             print("Sıranız: ", siradaki)
                     else:
-                        print("Geçersiz seçim")
+                        print("Geçersiz seçim. Lütfen tekrar deneyin!")
                 elif secim == "3":
                     with open("acil_giris.txt", "a", encoding="utf-8") as acil_giris:
                         siradaki = sum(1 for _ in open("acil_giris.txt", "r", encoding="utf-8")) + 1
@@ -119,4 +119,4 @@ while True:
                 elif secim == "4": #hastane kapasitesi tüm txt toplam satırı
                    print("Mevcut Hastane Kapasitesi: ")
                 else:
-                     print("Geçersiz seçim! Lütfen tekrar deneyin.")
+                     print("Geçersiz seçim. Lütfen tekrar deneyin!")
