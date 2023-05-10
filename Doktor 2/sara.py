@@ -1,3 +1,73 @@
+import time
+class Doktor:
+    def alan_kayit(self,alan="Yok",kimlik_no="Yok"):
+        kimlik_no = input("Lütfen kimlik numarasını girin: ")
+        alan = input("Lütfen hastayı yönlendirmek istediginiz alanın adını giriniz.(Kırmızı/Yeşil/Sarı/Röntgen/)")
+        with open("Kisi_bilgileri.txt", "r" , encoding="utf-8") as kisi_bilgileri, open(f"{alan}_alan.txt", "a" , encoding="utf-8") as kirmizi_alan:
+            kisi_bulundu = False  
+            for satir in kisi_bilgileri:
+                satir = satir.strip() 
+                bilgiler = satir.split(",") 
+                if bilgiler[0] == kimlik_no:
+                    kirmizi_alan.write(satir +" ,Kayıt Tarihi : " + (time.ctime(time.time())) +"\n")
+                    kisi_bulundu = True
+                    break
+            if not kisi_bulundu:
+                print("Hatalı bir kimlik numarası girdiniz, yeni hasta ekle menüsünü kullanmaya ne dersiniz?")
+    def yeni_kullanici(self):
+        kimlik_no = input("Kimlik numarası girin: ")
+        ad = input("Ad girin: ")
+        soyad = input("Soyad girin: ")
+        yas = input("Doğum Yılı girin: ")
+        cinsiyet = input("Cinsiyet girin")
+        oncelik_durumu = input("Oncelik durumu girin: ")
+        with open("Kisi_Bilgileri.txt", 'a', encoding="utf-8") as kullaniciekle:
+            kullaniciekle.write(f"{kimlik_no},{ad},{soyad},{yas},{cinsiyet},{oncelik_durumu}\n")
+    def alan_kayit(self,alan="Yok",kimlik_no="Yok"):
+        kimlik_no = input("Lütfen kimlik numarasını girin: ")
+        alan = input("Lütfen hastayı yönlendirmek istediginiz alanın adını giriniz.(Kırmızı/Yeşil/Sarı/Röntgen/Enjeksiyon)")
+        with open("Kisi_bilgileri.txt", "r" , encoding="utf-8") as kisi_bilgileri, open(f"{alan}_alan.txt", "a" , encoding="utf-8") as kirmizi_alan:
+            kisi_bulundu = False  
+            for satir in kisi_bilgileri:
+                satir = satir.strip() 
+                bilgiler = satir.split(",") 
+                if bilgiler[0] == kimlik_no:
+                    kirmizi_alan.write(satir +" ,Kayıt Tarihi : " + (time.ctime(time.time())) +"\n")
+                    kisi_bulundu = True
+                    break
+            if not kisi_bulundu:
+                print("Hatalı bir kimlik numarası girdiniz, kullanıcı ekle fonksiyonunu kullanmaya ne dersiniz?")
+               
+    def hasta_bilgi_görüntüle(self):
+        while 1:
+            print("Bilgi görüntülemek için 1'e basınız.")
+            print("Çıkmak için q'ya basınız.")
+            secim = input("Seçiminiz: ")
+            if secim =="1":
+                with open(f"Kisi_Bilgileri.txt", "r" , encoding="utf-8") as file:
+                    lines = file.readlines()
+                search_term = input("Lütfen Bilgisini Görüntülemek İstediginiz Hastanın TC numarasını giriniz.")
+                for i, line in enumerate(lines):
+                    if search_term in line:
+                        line_to_read = i
+                        break
+                print(line)
+            elif secim == "q":
+                break
+            else:
+                print("Yanlış bir seçim yaptınız lütfen tekrar deneyiniz.")
+    def hasta_cıkıs(self):
+        alan = input("Hangi alandan silmek istiyorsunuz? (Kırmızı/Yeşil/Sarı/Röntgen/Enjeksiyon/Acil Giriş)")
+        with open(f"{alan}_alan.txt", "r" , encoding="utf-8") as file:
+            lines = file.readlines()
+        search_term = input("TC??")
+        for i, line in enumerate(lines):
+            if search_term in line:
+                line_to_delete = i
+                break
+        del lines[line_to_delete]
+        with open(f"{alan}_alan.txt", "w" , encoding="utf-8") as file:
+            file.writelines(lines)
 doktor1 = Doktor()
 while True:
     print ("- ANA MENÜ - ")
