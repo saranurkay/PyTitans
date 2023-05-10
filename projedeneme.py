@@ -158,5 +158,7 @@ while True:
                        with open("enjeksiyon.txt", "r", encoding="utf-8") as enjeksiyon:
                            sira_sayisi = len(enjeksiyon.readlines())
                            print("Mevcut hasta sayısı: ", sira_sayisi)
+                   else:
+                       print("Geçersiz seçim. Lütfen tekrar deneyiniz!")
                 else:
                      print("Geçersiz seçim. Lütfen tekrar deneyin!")
