@@ -78,7 +78,7 @@ while True:
                 print("1 - Randevulu giriş")
                 print("2 - Randevusuz giriş")
                 print("3 - Acil Giriş")
-                print("4 - Mevcut Hastane Kapasitesi")
+                print("4 - Mevcut Hastane Kapasitesi Öğren")
                 secim = input("Lütfen seçiminizi yapın: ")
                 if secim == "1":
                     print("1 - Anestiyoloji")
@@ -99,8 +99,43 @@ while True:
                     print("16 - İç Hastalıkları(Dahiliye)")
                     print("17 - Kadın Hastalıkları")
                     print("18 - Beslenme ve Diyet")
-                    print("19 - Mevcut Hastane Kapasitesini Öğren")
                     secim = input("Lütfen seçim yapın: ")
+                    if secim == "1":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "2":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "3":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "4":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "5":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "6":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "7":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "8":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "9":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "10":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "11":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "12":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "13":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "14":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "15":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "16":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "17":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "18":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz. ")
                 elif secim == "2":
                     print("1 - Enjeksiyon")
                     secim = input("Lütfen seçim yapın: ")
@@ -117,6 +152,11 @@ while True:
                         acil_giris.write("{}\n".format(kimlik_no))
                         print("Sıranız: ", siradaki)
                 elif secim == "4": #hastane kapasitesi tüm txt toplam satırı
-                   print("Mevcut Hastane Kapasitesi: ")
+                   print("1 - Enjeksiyon mevcut hasta sayısı")
+                   secim = input("Lütfen seçim yapın.")
+                   if secim == "1":
+                       with open("enjeksiyon.txt", "r", encoding="utf-8") as enjeksiyon:
+                           sira_sayisi = len(enjeksiyon.readlines())
+                           print("Mevcut hasta sayısı: ", sira_sayisi)
                 else:
                      print("Geçersiz seçim. Lütfen tekrar deneyin!")
