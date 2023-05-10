@@ -235,7 +235,7 @@ while True:
                 elif secim == "4":
                    print("*" * 25)
                    print("1 - Enjeksiyon mevcut hasta sayısı")
-                   secim = input("Hastane Kapasitesi Menüsü seçimi yapınız.")
+                   secim = input("Hastane Kapasitesi Menüsü seçimi yapınız: ")
                    if secim == "1":
                        with open("enjeksiyon.txt", "r", encoding="utf-8") as enjeksiyon:
                            sira_sayisi = len(enjeksiyon.readlines())
@@ -244,6 +244,7 @@ while True:
                        print("Geçersiz seçim. Lütfen tekrar deneyiniz!")
                 else:
                      print("Geçersiz seçim. Lütfen tekrar deneyin!")
-    
+
+
     if secim == "3":
         break
