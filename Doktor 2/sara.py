@@ -1,0 +1,179 @@
+doktor1 = Doktor()
+while True:
+    print ("- ANA MENÜ - ")
+    print("Lütfen seçim yapınız:")
+    print("1- Doktor Girişi")
+    print("2- Hasta Girişi")
+    print("3- Çıkış")
+
+    secim = input("Ana Menü Seçiminiz: ")
+
+    if secim == "1":
+        print("Lütfen parolanızı giriniz.")
+        parola = input("Doktor parolasını girin: ")
+        if parola == "1":
+            print("Giriş Yapılıyor. Lütfen Bekleyiniz...")
+            while True:
+                print("- DOKTOR MENÜSÜ -")
+                print("1 - Hasta Bilgi - İşlem")
+                print("2 - Alan İşlemleri")
+                print("3 - Hasta Çıkışı")
+                print("4 - Ana Menüye Dönme")
+                secim = input("Doktor Menüsü Seçiminiz: ")
+                if secim == "1":
+                        print(" - HASTA BİLGİ İŞLEM -")
+                        print("1 - Yeni Hasta Ekleme: ")
+                        print("2 - Mevcut Hasta Bilgi Görüntüleme: ")
+                        print("3 - Ana Menüye Dönme")
+                        secim = input("Hasta Bilgi İşlem Menüsü Seçiminiz: ")
+                        if secim == "1":
+                            doktor1.yeni_kullanici()
+                        elif secim == "2":
+                            doktor1.hasta_bilgi_görüntüle()
+                        elif secim == "3":
+                            break
+                        else:
+                            print("Yanlış bir seçim yaptınız lütfen tekrar deneyiniz.")
+                        
+            
+                if secim == "2":
+                    print (" - ALAN İŞLEMLERİ - ")
+                    print("1 - Alan Kayıt İşlemleri: ")
+                    print("2 - Yeni Hasta ekle")
+                    print("3 - Çıkış")
+                    secim = input("Seciminiz: ")
+                    if secim == "1":
+                        doktor1.alan_kayit()
+                    if secim == "2":
+                        doktor1.yeni_kullanici()
+                    if secim == "3":
+                        break   
+                
+                if secim == "3":
+                    print("- HASTA ÇIKIŞ - ")
+                    print("1 - Hasta Çıkış: ")
+                    print("2 - Çıkış: ")
+                    secim = input("Hasta Çıkış Menüsü Seçiminiz: ")
+                    if secim == "1":
+                        doktor1.hasta_cıkıs()
+                    if secim == "2":
+                        break
+                    else:
+                        print("Yanlış Bir Tuşlama yaptınız lütfen tekrar deneyin.")
+                if secim == "4":
+                    print("Ana Menüye Yönlendiriliyorsunuz...")
+                    time.sleep(0.75)
+                    break
+        else:
+            print("Parola yanlış! Tekrar deneyin...")
+    
+    if secim == "2":
+        filename = "Kisi_Bilgileri.txt"
+        def kullanici_bilgileri(kimlik_no):
+            with open(filename, 'r', encoding="utf-8") as f:
+                for satir in f:
+                    bilgiler = satir.strip().split(',')
+                    if bilgiler[0] == kimlik_no:
+                        return bilgiler[1], bilgiler[2], bilgiler[3], bilgiler[4], bilgiler[5]
+            return None
+        with open("Kisi_Bilgileri.txt", "r", encoding="utf-8") as dosya:
+            kimlik_no = input("Kimlik numaranızı girin: ")
+            bilgiler = kullanici_bilgileri(kimlik_no)
+            if bilgiler is None:
+                print("Kimlik numaranızı yanlış ya da hatalı girdiniz.")
+            else:
+                print(f"{bilgiler[0]} {bilgiler[1]} lütfen bekleyiniz...")
+                print("- HASTA ANA MENÜSÜ - ")
+                print("1 - Randevulu giriş")
+                print("2 - Randevusuz giriş")
+                print("3 - Acil Giriş")
+                print("4 - Mevcut Hastane Kapasitesi Öğren")
+                secim = input("Lütfen hasta ana menüsü seçiminizi yapınız: ")
+                if secim == "1":
+                    print("- POLİKİNLİK ANA MENÜSÜ -")
+                    print("1 - Anestiyoloji")
+                    print("2 - Beslenme ve Diyet")
+                    print("3 - Beyin ve Sinir Cerrahisi")
+                    print("4 - Endoskopi")
+                    print("5 - Göğüs Hastalıkları ve Alarji")
+                    print("6 - Nöroloji")
+                    print("7 - Psikoloji")
+                    print("8 - Üroloji")
+                    print("9 - Genel Cerrahi")
+                    print("10 - Göz Hastalıkları")
+                    print("11 - Kadın Doğum")
+                    print("12 - Kulak Burun Boğaz")
+                    print("13 - Ortodonti")
+                    print("14 - Radyoloji")
+                    print("15 - Cildiye")
+                    print("16 - İç Hastalıkları(Dahiliye)")
+                    print("17 - Kadın Hastalıkları")
+                    print("18 - Beslenme ve Diyet")
+                    secim = input("Lütfen Polikinlik seçimi yapın: ")
+                    if secim == "1":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "2":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "3":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "4":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "5":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "6":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "7":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "8":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "9":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "10":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "11":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "12":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "13":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "14":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "15":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "16":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "17":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz.")
+                    if secim == "18":
+                        print("Kaydınız gerçekleşti. Randevu saatinizde doktorunuzun odasına girebilirsiniz. ")
+                elif secim == "2":
+                    print("- RANDEVUSUZ HASTA MENÜSÜ -")
+                    print("1 - Enjeksiyon Sıra Al")
+                    secim = input("Lütfen Randevusuz Menü seçimi yapınız: ")
+                    if secim == "1":
+                        with open("enjeksiyon.txt", "a", encoding="utf-8") as enjeksiyon:
+                            siradaki = sum(1 for _ in open("enjeksiyon.txt", "r", encoding="utf-8")) + 1
+                            enjeksiyon.write("{}\n".format(kimlik_no))
+                            print("Sıranız: ", siradaki)
+                    else:
+                        print("Geçersiz seçim. Lütfen tekrar deneyin!")
+                elif secim == "3":
+                    with open("acil_giris.txt", "a", encoding="utf-8") as acil_giris:
+                        siradaki = sum(1 for _ in open("acil_giris.txt", "r", encoding="utf-8")) + 1
+                        acil_giris.write("{}\n".format(kimlik_no))
+                        print("Sıranız: ", siradaki)
+                elif secim == "4":
+                   print("*" * 25)
+                   print("1 - Enjeksiyon mevcut hasta sayısı")
+                   secim = input("Hastane Kapasitesi Menüsü seçimi yapınız.")
+                   if secim == "1":
+                       with open("enjeksiyon.txt", "r", encoding="utf-8") as enjeksiyon:
+                           sira_sayisi = len(enjeksiyon.readlines())
+                           print("Mevcut hasta sayısı: ", sira_sayisi)
+                   else:
+                       print("Geçersiz seçim. Lütfen tekrar deneyiniz!")
+                else:
+                     print("Geçersiz seçim. Lütfen tekrar deneyin!")
+    
+    if secim == "3":
+        break
