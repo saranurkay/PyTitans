@@ -3,7 +3,7 @@ class Doktor:
     def alan_kayit(self,alan="Yok",kimlik_no="Yok"):
         kimlik_no = input("Lütfen kimlik numarasını girin: ")
         alan = input("Lütfen hastayı yönlendirmek istediginiz alanın adını giriniz.(Kırmızı/Yeşil/Sarı/Röntgen/)")
-        with open("Kisi_bilgileri.txt", "r" , encoding="utf-8") as kisi_bilgileri, open(f"{alan}_alan.txt", "a" , encoding="utf-8") as kirmizi_alan:
+        with open("Kisi_Bilgileri.txt", "r" , encoding="utf-8") as kisi_bilgileri, open(f"{alan}_alan.txt", "a" , encoding="utf-8") as kirmizi_alan:
             kisi_bulundu = False  
             for satir in kisi_bilgileri:
                 satir = satir.strip() 
@@ -26,7 +26,7 @@ class Doktor:
     def alan_kayit(self,alan="Yok",kimlik_no="Yok"):
         kimlik_no = input("Lütfen kimlik numarasını girin: ")
         alan = input("Lütfen hastayı yönlendirmek istediginiz alanın adını giriniz.(Kırmızı/Yeşil/Sarı/Röntgen/Enjeksiyon)")
-        with open("Kisi_bilgileri.txt", "r" , encoding="utf-8") as kisi_bilgileri, open(f"{alan}_alan.txt", "a" , encoding="utf-8") as kirmizi_alan:
+        with open("Kisi_Bilgileri.txt", "r" , encoding="utf-8") as kisi_bilgileri, open(f"{alan}_alan.txt", "a" , encoding="utf-8") as kirmizi_alan:
             kisi_bulundu = False  
             for satir in kisi_bilgileri:
                 satir = satir.strip() 
@@ -148,7 +148,7 @@ while True:
             kimlik_no = input("Kimlik numaranızı giriniz: ")
             if len(kimlik_no) != 11:
                 raise ValueError("Eksik ya da hatalı kimlik numarası girdiniz!")
-            with open("kisi_bilgileri.txt", "r", encoding="utf-8") as f:
+            with open("Kisi_Bilgileri.txt", "r", encoding="utf-8") as f:
                 kimlikler = [line.strip().split(",")[0] for line in f]
                 if kimlik_no not in kimlikler:
                    raise ValueError("Eksik ya da hatalı kimlik numarası girdiniz!")
@@ -222,8 +222,8 @@ while True:
                 print("1 - Enjeksiyon Sıra Al")
                 secim = input("Lütfen Randevusuz Menü seçimi yapınız: ")
                 if secim == "1":
-                    with open("enjeksiyon.txt", "a", encoding="utf-8") as enjeksiyon:
-                        siradaki = sum(1 for _ in open("enjeksiyon.txt", "r", encoding="utf-8")) + 1
+                    with open("Enjeksiyon_alan.txt", "a", encoding="utf-8") as enjeksiyon:
+                        siradaki = sum(1 for _ in open("Enjeksiyon_alan.txt", "r", encoding="utf-8")) + 1
                         enjeksiyon.write("{}\n".format(kimlik_no))
                         print("Sıranız: ", siradaki)
                 else:
@@ -238,7 +238,7 @@ while True:
                print("1 - Enjeksiyon mevcut hasta sayısı")
                secim = input("Hastane Kapasitesi Menüsü seçimi yapınız: ")
                if secim == "1":
-                   with open("enjeksiyon.txt", "r", encoding="utf-8") as enjeksiyon:
+                   with open("Enjeksiyon_alan.txt", "r", encoding="utf-8") as enjeksiyon:
                        sira_sayisi = len(enjeksiyon.readlines())
                        print("Mevcut hasta sayısı: ", sira_sayisi)
                else:
