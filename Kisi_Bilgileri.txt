@@ -1,0 +1,55 @@
+11111111110,Röportaj,Adam,1992,Erkek,Yok
+11111111112,Kuru,Ekmek,2000,Kadın,Yok
+11111111114,Sutlu,Cikolata,1995,Erkek,Engelli
+11111111116,Zeytin,Peynir,1965,Kadın,Yok
+11111111118,Fındık,Lahmacun,1988,Kadın,Yok
+11111111120,Eniyimeyve,Erik,1974,Erkek,Yok
+11111111122,Samsun,Pidesi,2001,Kadın,Yok
+11111111124,Ayvalık,Tostu,2005,Kadın,Yok
+11111111126,Karnım,Acıktı,2016,Kadın,-7 Yas
+11111111128,Ay,Ayayay,1958,Erkek,+65 Yas
+11111111130,Kahve,Olmazsaolmaz,1943,Kadın,+65 Yas
+11111111132,Buulkeninhali,Neolacak,1923,Kadın,+65 Yas
+11111111134,Liderlerime,Selamlar,2003,Erkek,Yok
+11111111136,Yetgen,Bitmez,1977,Erkek,Yok
+11111111138,Papatyaları,Severim,1976,Erkek,Gazi
+11111111140,Ay,Izlerim,1997,Erkek,Şehit Yakını
+11111111142,Masal,Yazmakgüzel,1946,Kadın,Şehit Yakını
+11111111144,Python,Ogrenin,1963,Kadın,Yok
+11111111146,Yaratıcılık,Bitti,1948,Erkek,Engelli
+11111111148,Elma,Armut,1985,Kadın,Yok
+11111111150,Muz,Patates,2007,Erkek,Yok
+11111111152,Çikolatalı,Keşkül,1991,Kadın,Yok
+11111111154,Köfte,Piyaz,1980,Erkek,Yok
+11111111156,İşportacının,Oğlu,1968,Erkek,Yok
+11111111158,Ankara,Simiti,1975,Kadın,Yok
+11111111160,Kaçamak,Sevenler,1998,Kadın,Yok
+11111111162,Sade,Kahve,2002,Erkek,Yok
+11111111164,Turunçgiller,Severim,1979,Kadın,Yok
+11111111166,Birleşik,Arap,Emirlikleri,1954,Kadın,+65 Yas
+11111111168,Evde,Kalmış,2010,Erkek,-7 Yas
+11111111170,Canım,Bayram,1993,Kadın,Yok
+11111111172,Yeşil,Soğan,1969,Kadın,Yok
+11111111174,Deniz,Kabuğu,2008,Erkek,Yok
+11111111176,Mandalina,Kokulu,1957,Erkek,+65 Yas
+11111111178,Mersin,Torosları,1987,Kadın,Yok
+11111111180,Kayısı,Tatlısı,1973,Erkek,Yok
+11111111182,Beşiktaş,Forması,1999,Erkek,Yok
+11111111184,Balık,Tutkunu,1961,Kadın,Yok
+11111111186,Portakal,Kabuğu,1972,Erkek,Yok
+11111111188,Alınteri,Damları,1994,Kadın,Yok
+11111111190,İyilik,Peşinde,2004,Erkek,Yok
+11111111192,Yalnızlık,Sevdası,1986,Kadın,Yok
+11111111194,Turuncu,Yaprak,1971,Erkek,Yok
+11111111196,Çoban,Salamı,2009,Erkek,-7 Yas
+11111111198,Ağaç,Kovuğu,1966,Kadın,Yok
+11111111200,Hercai,Menejeri,1990,Kadın,Yok
+11111111202,Patates,Püresi,1978,Erkek,Yok
+11111111204,Kara,Çalı,1955,Kadın,+65 Yas
+11111111206,Tavşan,Dişi,2006,Kadın,Yok
+11111111208,Sütlü,Kahve,1996,Erkek,Yok
+11111111210,Serpme,Kahvaltı,1962,Kadın,Yok
+11111111212,Kuruyemiş,Dükkanı,1976,Erkek,Yok
+11111111214,Şekerpare,Tatlısı,2003,Kadın,Yok
+11111111216,Yoğurt,Tatlısı,1992,Erkek,Yok
+11111111218,Antalya,Kumları,1981,Kadın
